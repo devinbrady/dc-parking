@@ -297,7 +297,7 @@ if __name__ == '__main__':
             , 'input/Parking_Meters-shp/Parking_Meters.shp': 50 * one_foot_in_meters
         }
         , output_file = 'output/parking_spots_narrowed.geojson'
-        , sample = True
+        , sample = False
     )
 
 
