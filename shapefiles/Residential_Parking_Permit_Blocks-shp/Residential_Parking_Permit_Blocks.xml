@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8"?><metadata>
+    <idinfo>
+        <citation>
+            <citeinfo>
+                <origin/>
+                <pubdate>20190723</pubdate>
+                <pubtime>unknown</pubtime>
+                <title>Residential Parking Permit Blocks</title>
+                <geoform>vector digital data</geoform>
+                <pubinfo>
+                    <pubplace/>
+                    <publish>DDOT GIS</publish>
+                </pubinfo>
+            </citeinfo>
+        </citation>
+        <descript>
+            <abstract>Residential Parking Permit Blocks. The dataset contains locations and attributes of Residential Parking Permit locations, created as part of the District of Columbia, Department of Transportation (DDOT) Street Spatial Database (SSD). This data is used for the planning and management of residential parking permit events - assets, activities, incidents, as well as the maintenance of reference features. A database provided by the District of Columbia, Department of Transportation identified StreetSegment locations.</abstract>
+            <purpose>This data is used for the planning and management of residential parking permit block events - assets, activities, incidents, as well as the maintenance of reference reatures.</purpose>
+        </descript>
+        <timeperd>
+            <timeinfo>
+                <rngdates>
+                    <begdate>unknown</begdate>
+                    <enddate>unknown</enddate>
+                </rngdates>
+            </timeinfo>
+            <current>publication date</current>
+        </timeperd>
+        <status>
+            <progress>Complete</progress>
+            <update>As needed</update>
+        </status>
+        <spdom>
+            <bounding>
+                <westbc>-77.111681</westbc>
+                <eastbc>-76.909401</eastbc>
+                <northbc>38.995255</northbc>
+                <southbc>38.822778</southbc>
+            </bounding>
+        </spdom>
+        <keywords>
+            <theme>
+                <themekt>None</themekt>
+                <themekey>RPP</themekey>
+                <themekey>Residential Parking Permit</themekey>
+                <themekey>Residential</themekey>
+                <themekey>Parking</themekey>
+                <themekey>Permit</themekey>
+            </theme>
+            <theme>
+                <themekt>ISO 19115 Topic Categories</themekt>
+                <themekey>transportation</themekey>
+            </theme>
+            <place>
+                <placekt>None</placekt>
+                <placekey>Washington</placekey>
+                <placekey>DC</placekey>
+                <placekey>District of Columbia</placekey>
+            </place>
+        </keywords>
+        <accconst>None</accconst>
+        <useconst>This work is licensed under a Creative Commons Attribution 4.0 International License.</useconst>
+        <ptcontac>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>D.C. Office of the Chief Technology Officer</cntorg>
+                    <cntper>GIS Data Coordinator</cntper>
+                </cntorgp>
+                <cntaddr>
+                    <addrtype>mailing and physical</addrtype>
+                    <address>200 I Street SE, 5th Floor</address>
+                    <city>Washington</city>
+                    <state>DC</state>
+                    <postal>20003</postal>
+                    <country>US</country>
+                </cntaddr>
+                <cntfax>(202) 727-5660</cntfax>
+                <cntemail>dcgis@dc.gov</cntemail>
+                <hours>8:30 am - 5 pm</hours>
+            </cntinfo>
+        </ptcontac>
+        <crossref>
+            <citeinfo>
+                <origin/>
+                <title>Residential Parking Permit block</title>
+                <pubinfo>
+                    <pubplace/>
+                    <publish>DDOT GIS</publish>
+                </pubinfo>
+            </citeinfo>
+        </crossref>
+    </idinfo>
+    <spdoinfo>
+        <direct>Vector</direct>
+        <ptvctinf>
+            <sdtsterm>
+                <sdtstype>String</sdtstype>
+                <ptvctcnt>5903</ptvctcnt>
+            </sdtsterm>
+        </ptvctinf>
+    </spdoinfo>
+    <eainfo>
+        <detailed>
+            <enttyp>
+                <enttypl>RPPblocks</enttypl>
+            </enttyp>
+            <attr>
+                <attrlabl>OBJECTID</attrlabl>
+                <attrdef>Internal feature number.</attrdef>
+                <attrdefs>Esri</attrdefs>
+                <attrdomv>
+                              
+                    <udom>Sequential unique whole numbers that are automatically generated.</udom>
+                            
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>STREETSEGID</attrlabl>
+                <attrdef>Street Segment unique identifier</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>SSD_ID</attrlabl>
+                <attrdef>Street Spatial Database ID</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>SOURCEID</attrlabl>
+                <attrdef>ID of the source linear feature class</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>QUADCODE</attrlabl>
+                <attrdef>Quadrant Code</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>BEGINMEASURE</attrlabl>
+                <attrdef>being measure</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>ENDMEASURE</attrlabl>
+                <attrdef>end measure</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>INSERVICEDATE</attrlabl>
+                <attrdef>Date commisioned into service</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>OUTOFSERVICEDATE</attrlabl>
+                <attrdef>Date taken out of service</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>UPDATETIMESTAMP</attrlabl>
+                <attrdef>Time stamp of last record update</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>LIFECYCLESTATUS</attrlabl>
+                <attrdef>Status Code</attrdef>
+                <attrdefs>DDOT</attrdefs>
+                <attrdomv>
+                              
+                    <edom>
+                                    
+                        <edomv>1</edomv>
+                                    
+                        <edomvd>Active</edomvd>
+                                  
+                    </edom>
+                              
+                    <edom>
+                                    
+                        <edomv>2</edomv>
+                                    
+                        <edomvd>Retired</edomvd>
+                                  
+                    </edom>
+                              
+                    <edom>
+                                    
+                        <edomv>3</edomv>
+                                    
+                        <edomvd>Paper</edomvd>
+                                  
+                    </edom>
+                              
+                    <edom>
+                                    
+                        <edomv>4</edomv>
+                                    
+                        <edomvd>Derived</edomvd>
+                                  
+                    </edom>
+                              
+                    <edom>
+                                    
+                        <edomv>5</edomv>
+                                    
+                        <edomvd>Open</edomvd>
+                                  
+                    </edom>
+                              
+                    <edom>
+                                    
+                        <edomv>6</edomv>
+                                    
+                        <edomvd>Close</edomvd>
+                                  
+                    </edom>
+                              
+                    <edom>
+                                    
+                        <edomv>7</edomv>
+                                    
+                        <edomvd>On Hold</edomvd>
+                                  
+                    </edom>
+                              
+                    <edom>
+                                    
+                        <edomv>8</edomv>
+                                    
+                        <edomvd>Changed</edomvd>
+                                  
+                    </edom>
+                              
+                    <edom>
+                                    
+                        <edomv>9</edomv>
+                                    
+                        <edomvd>New</edomvd>
+                                  
+                    </edom>
+                              
+                    <edom>
+                                    
+                        <edomv>10</edomv>
+                                    
+                        <edomvd>Old</edomvd>
+                                  
+                    </edom>
+                              
+                    <edom>
+                                    
+                        <edomv>11</edomv>
+                                    
+                        <edomvd>Deleted</edomvd>
+                                  
+                    </edom>
+                              
+                    <edom>
+                                    
+                        <edomv>12</edomv>
+                                    
+                        <edomvd>Completed</edomvd>
+                                  
+                    </edom>
+                              
+                    <edom>
+                                    
+                        <edomv>13</edomv>
+                                    
+                        <edomvd>Budgeted</edomvd>
+                                  
+                    </edom>
+                              
+                    <edom>
+                                    
+                        <edomv>14</edomv>
+                                    
+                        <edomvd>Under Construction</edomvd>
+                                  
+                    </edom>
+                              
+                    <edom>
+                                    
+                        <edomv>15</edomv>
+                                    
+                        <edomvd>Planned</edomvd>
+                                  
+                    </edom>
+                              
+                    <edom>
+                                    
+                        <edomv>16</edomv>
+                                    
+                        <edomvd>Under Design</edomvd>
+                                  
+                    </edom>
+                            
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>DIRECTIONALITY</attrlabl>
+                <attrdef>Directionality of Street Centerline</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>NUMBEROFLANES</attrlabl>
+                <attrdef>Number of lanes</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>SEGMENTWIDTH</attrlabl>
+                <attrdef>Segment width</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>OWNERSHIP</attrlabl>
+                <attrdef>Entity responsible for street maintenance</attrdef>
+                <attrdefs>DDOT</attrdefs>
+                <attrdomv>
+                              
+                    <edom>
+                                    
+                        <edomv>Unknown</edomv>
+                                  
+                    </edom>
+                              
+                    <edom>
+                                    
+                        <edomv>DDOT</edomv>
+                                  
+                    </edom>
+                              
+                    <edom>
+                                    
+                        <edomv>National Park Service</edomv>
+                                  
+                    </edom>
+                              
+                    <edom>
+                                    
+                        <edomv>Architect of the Capitol</edomv>
+                                  
+                    </edom>
+                              
+                    <edom>
+                                    
+                        <edomv>Military Reservation</edomv>
+                                  
+                    </edom>
+                              
+                    <edom>
+                                    
+                        <edomv>Private</edomv>
+                                  
+                    </edom>
+                              
+                    <edom>
+                                    
+                        <edomv>WMATA-METRO</edomv>
+                                  
+                    </edom>
+                              
+                    <edom>
+                                    
+                        <edomv>Other DC Agencies</edomv>
+                                  
+                    </edom>
+                              
+                    <edom>
+                                    
+                        <edomv>Other Federal Agencies</edomv>
+                                  
+                    </edom>
+                            
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>DESCRIPTION</attrlabl>
+                <attrdef>Description</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>SEGMENTTYPE</attrlabl>
+                <attrdef>street centerline type</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>STREETROUTEID</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>STROUTEFROMMEASURE</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>STROUTETOMEASURE</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>FROMNODEID</attrlabl>
+                <attrdef>from node id</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>TONODEID</attrlabl>
+                <attrdef>to node id</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>STREETID</attrlabl>
+                <attrdef>Street identifier</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>REGISTEREDNAME</attrlabl>
+                <attrdef>Street Name</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>STREETTYPE</attrlabl>
+                <attrdef>Street Type</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>QUADRANT</attrlabl>
+                <attrdef>Quadrant</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>FROMADDRESSLEFT</attrlabl>
+                <attrdef>From address on left side</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>TOADDRESSLEFT</attrlabl>
+                <attrdef>To address on left side</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>FROMADDRESSRIGHT</attrlabl>
+                <attrdef>From address on right side</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>TOADDRESSRIGHT</attrlabl>
+                <attrdef>To address on right side</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>NHSROUTEID</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>ADDRESSRANGEID</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>STREETROUTESEGID</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>FROMADDRESSLEFTTHEO</attrlabl>
+                <attrdef>from address low left theoretical range</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>TOADDRESSLEFTTHEO</attrlabl>
+                <attrdef>to address high left theoretical range</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>FROMADDRESSRIGHTTHEO</attrlabl>
+                <attrdef>From address low right theoretical range</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>TOADDRESSRIGHTTHEO</attrlabl>
+                <attrdef>To address high theoretical range</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>FACILITYID</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>BLOCKNUMBER</attrlabl>
+                <attrdef>Block number</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>BLK_SIDE</attrlabl>
+                <attrdef>Block side of RPP block.
+AO signifies address only; B signifies both sides; V signifies even block numbers side; O signifies odd block numbers side; and finally, S signifies single building.</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>WARD</attrlabl>
+                <attrdef>Ward number</attrdef>
+                <attrdefs>OCTO</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>BLKSTREET</attrlabl>
+                <attrdef>RPP block address</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>SHAPE</attrlabl>
+                <attrdef>Feature geometry.</attrdef>
+                <attrdefs>Esri</attrdefs>
+                <attrdomv>
+                              
+                    <udom>Coordinates defining the features.</udom>
+                            
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>SE_ANNO_CAD_DATA</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>GIS_ID</attrlabl>
+                <attrdef>OCTO GIS sequential identifier</attrdef>
+                <attrdefs>OCTO</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>GLOBALID</attrlabl>
+                <attrdef>Global ID</attrdef>
+                <attrdefs>OCTO</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>CREATOR</attrlabl>
+                <attrdef>A user who created a record.</attrdef>
+                <attrdefs>OCTO</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>CREATED</attrlabl>
+                <attrdef>The dates a record were created</attrdef>
+                <attrdefs>OCTO</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>EDITOR</attrlabl>
+                <attrdef>A user who last edited a record.</attrdef>
+                <attrdefs>OCTO</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>EDITED</attrlabl>
+                <attrdef>The dates a record were last edited.</attrdef>
+                <attrdefs>OCTO</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>SHAPE.LEN</attrlabl>
+            </attr>
+        </detailed>
+    </eainfo>
+    <distinfo>
+        <distrib>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>D.C. Office of the Chief Technology Officer</cntorg>
+                    <cntper>GIS Data Coordinator</cntper>
+                </cntorgp>
+                <cntaddr>
+                    <addrtype>mailing and physical</addrtype>
+                    <address>200 I Street SE, 5th Floor</address>
+                    <city>Washington</city>
+                    <state>DC</state>
+                    <postal>20003</postal>
+                    <country>US</country>
+                </cntaddr>
+                <cntfax>(202) 727-5660</cntfax>
+                <cntemail>dcgis@dc.gov</cntemail>
+                <hours>8:30 am - 5 pm</hours>
+            </cntinfo>
+        </distrib>
+        <distliab>See access and use constraints information.</distliab>
+        <custom>DC datasets can be downloaded from "http://opendata.dc.gov".</custom>
+    </distinfo>
+    <metainfo>
+        <metd>20190722</metd>
+        <metc>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>D.C. Office of the Chief Technology Officer</cntorg>
+                    <cntper>GIS Data Coordinator</cntper>
+                </cntorgp>
+                <cntaddr>
+                    <addrtype>mailing and physical</addrtype>
+                    <address>200 I Street SE, 5th Floor</address>
+                    <city>Washington</city>
+                    <state>DC</state>
+                    <postal>20003</postal>
+                    <country>US</country>
+                </cntaddr>
+                <cntfax>(202) 727-5660</cntfax>
+                <cntemail>dcgis@dc.gov</cntemail>
+                <hours>8:30 am - 5 pm</hours>
+            </cntinfo>
+        </metc>
+        <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+        <metstdv>FGDC-STD-001-1998</metstdv>
+        <mettc>local time</mettc>
+    </metainfo>
+</metadata>

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?><metadata>
+    <idinfo>
+        <citation>
+            <citeinfo>
+                <origin/>
+                <pubdate>20170516</pubdate>
+                <title>Parking Meter</title>
+                <geoform>vector digital data</geoform>
+                <pubinfo>
+                    <publish>DDOT</publish>
+                </pubinfo>
+            </citeinfo>
+        </citation>
+        <descript>
+            <abstract>Parking meter assets are used to manage and encourage turnover of curbside parking on streets in Washington, DC. These assets are owned, operated, and maintained by the District Department of Transportation (DDOT), unless otherwise noted (e.g. meters on National Park Service property are maintained and owned by the National Park Service). In addition to location information of meters, a related table of parking meter operational details is available for each parking meter asset. For more information visit https://wiki.ddot.dc.gov/display/OP/Parking+Meter+Data.</abstract>
+            <purpose>This data is used for the planning and management of Parking Meters, as well as the maintenance of Parking Meter Features of the District of Columbia, Department of Transportation (DDOT).</purpose>
+            <supplinf>This dataset is the point geometry that represents Parking Meters</supplinf>
+        </descript>
+        <status>
+            <update>As needed</update>
+        </status>
+        <spdom>
+            <bounding>
+                <westbc>-180.000000</westbc>
+                <eastbc>180.000000</eastbc>
+                <northbc>90.000000</northbc>
+                <southbc>0.000000</southbc>
+            </bounding>
+        </spdom>
+        <keywords>
+            <theme>
+                <themekt>None</themekt>
+                <themekey>transportation</themekey>
+                <themekey>parking meter</themekey>
+                <themekey>meter</themekey>
+                <themekey>Traffic</themekey>
+                <themekey>parking</themekey>
+            </theme>
+            <theme>
+                <themekt>ISO 19115 Topic Categories</themekt>
+                <themekey>transportation</themekey>
+            </theme>
+            <place>
+                <placekt>None</placekt>
+                <placekey>Washington</placekey>
+                <placekey>D.C.</placekey>
+                <placekey>DCGIS</placekey>
+                <placekey>District of Columbia</placekey>
+                <placekey>DC GIS</placekey>
+                <placekey>DC</placekey>
+            </place>
+        </keywords>
+        <accconst>None</accconst>
+        <useconst>This work is licensed under a Creative Commons Attribution 4.0 International License</useconst>
+        <ptcontac>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>D.C. Office of the Chief Technology Officer</cntorg>
+                    <cntper>GIS Data Coordinator</cntper>
+                </cntorgp>
+                <cntaddr>
+                    <addrtype>mailing and physical</addrtype>
+                    <address>200 I Street SE, 5th Floor</address>
+                    <city>Washington</city>
+                    <state>DC</state>
+                    <postal>20003</postal>
+                    <country>US</country>
+                </cntaddr>
+                <cntfax>(202) 727-5660</cntfax>
+                <cntemail>dcgis@dc.gov</cntemail>
+                <hours>8:30 am - 5 pm</hours>
+            </cntinfo>
+        </ptcontac>
+        <datacred>District of Columbia, Department of Transportation. Operational Support and Applied Technology (OSAT) - Spatial Data Systems.</datacred>
+    </idinfo>
+    <spdoinfo>
+        <direct>Vector</direct>
+        <ptvctinf>
+            <sdtsterm>
+                <sdtstype>Entity point</sdtstype>
+                <ptvctcnt>10922</ptvctcnt>
+            </sdtsterm>
+        </ptvctinf>
+    </spdoinfo>
+    <eainfo>
+        <detailed>
+            <enttyp>
+                <enttypl>DCGIS.ParkingMeter</enttypl>
+                <enttypd>Parking meter point data</enttypd>
+                <enttypds>DDOT contractor XML extract</enttypds>
+            </enttyp>
+            <attr>
+                <attrlabl>OBJECTID</attrlabl>
+                <attrdef>Internal feature number.</attrdef>
+                <attrdefs>Esri</attrdefs>
+                <attrdomv>
+                              
+                    <udom>Sequential unique whole numbers that are automatically generated.</udom>
+                            
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>METERID</attrlabl>
+                <attrdef>Unique identifier for each parking meter</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>ROUTEID</attrlabl>
+                <attrdef>The DDOT linear referencing system (LRS) centerline unique id</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>SIDE</attrlabl>
+                <attrdef>The DDOT linear referencing system (LRS) side of the centerline that the meter is located.  Side is determined by orienting towards the ascending direction of the line.</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>MEAS</attrlabl>
+                <attrdef>The DDOT linear referencing system (LRS) centerline measurement from the beginning of the route.  Measure values are in meters.</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>LONGITUDE</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>LATITUDE</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>DDOTLON</attrlabl>
+                <attrdef>Derived X coordinate from either the MAR or DDOT's LRS Centerline.</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>DDOTLAT</attrlabl>
+                <attrdef>Derived Y coordinate from either the MAR or DDOT's LRS Centerline.</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>DDOTMDSPX</attrlabl>
+                <attrdef>Derived projected X coordinate from either the MAR or DDOT's LRS Centerline.</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>DDOTMDSPY</attrlabl>
+                <attrdef>Derived projected Y coordinate from either the MAR or DDOT's LRS Centerline.</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>STREET</attrlabl>
+                <attrdef>Original street name from the contractor XML</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>BLOCK</attrlabl>
+                <attrdef>Original hundred block number from the contractor XML</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>METERTYPE</attrlabl>
+                <attrdef>There are 3 main types of meters - 
+Single meters are for single spaces
+Double meters are for two spaces
+Multi meters are multispace kiosks that server multiple spaces</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>METERMODEL</attrlabl>
+                <attrdef>Brand or nomenclature of a meter</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>METERSTATUS</attrlabl>
+                <attrdef>Unknown - an open outage has been reported on this meter, but outage type is not known
+Inactive - an open outage has been reported on this meter, with a known outage type.
+Active - no reported outages</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>METERSTATE</attrlabl>
+                <attrdef>Active - meter is active and in live inventory.</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>METERSPACES</attrlabl>
+                <attrdef>Total number of spaces (if known) for a given meter</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>ISADA</attrlabl>
+                <attrdef>Y - this is an ADA-accessible meter
+N - this is a 'standard' meter which may not be ADA-accessible.</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>PMZONE</attrlabl>
+                <attrdef>The Park Mobile Zone ID number assoicated to this meter</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>TRANSMISSIONDATE</attrlabl>
+                <attrdef>Date extracted from contractor database.</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>SHAPE</attrlabl>
+                <attrdef>Feature geometry.</attrdef>
+                <attrdefs>Esri</attrdefs>
+                <attrdomv>
+                              
+                    <udom>Coordinates defining the features.</udom>
+                            
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>ERRORCODES</attrlabl>
+                <attrdef>These are self-explanatory error codes that are logged at the time of import or processing.</attrdef>
+                <attrdefs>DDOT</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>SE_ANNO_CAD_DATA</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>GIS_ID</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>GlobalID</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>Creator</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>Created</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>Editor</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>Edited</attrlabl>
+            </attr>
+        </detailed>
+    </eainfo>
+    <distinfo>
+        <distrib>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>D.C. Office of the Chief Technology Officer</cntorg>
+                    <cntper>GIS Data Coordinator</cntper>
+                </cntorgp>
+                <cntaddr>
+                    <addrtype>mailing and physical</addrtype>
+                    <address>200 I Street SE, 5th Floor</address>
+                    <city>Washington</city>
+                    <state>DC</state>
+                    <postal>20003</postal>
+                    <country>US</country>
+                </cntaddr>
+                <cntfax>(202) 727-5660</cntfax>
+                <cntemail>dcgis@dc.gov</cntemail>
+                <hours>8:30 am - 5 pm</hours>
+            </cntinfo>
+        </distrib>
+        <distliab>See access and use constraints information.</distliab>
+        <custom>DC datasets can be downloaded from "http://opendata.dc.gov</custom>
+    </distinfo>
+    <metainfo>
+        <metd>20180611</metd>
+        <metc>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>D.C. Office of the Chief Technology Officer</cntorg>
+                    <cntper>GIS Data Coordinator</cntper>
+                </cntorgp>
+                <cntaddr>
+                    <addrtype>mailing and physical</addrtype>
+                    <address>200 I Street SE, 5th Floor</address>
+                    <city>Washington</city>
+                    <state>DC</state>
+                    <postal>20003</postal>
+                    <country>US</country>
+                </cntaddr>
+                <cntfax>(202) 727-5660</cntfax>
+                <cntemail>dcgis@dc.gov</cntemail>
+                <hours>8:30 am - 5 pm</hours>
+            </cntinfo>
+        </metc>
+        <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+        <metstdv>FGDC-STD-001-1998</metstdv>
+        <mettc>local time</mettc>
+    </metainfo>
+</metadata>

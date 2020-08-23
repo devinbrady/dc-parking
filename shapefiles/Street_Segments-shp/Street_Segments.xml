@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?><metadata>
+    <idinfo>
+        <citation>
+            <citeinfo>
+                <origin/>
+                <pubdate>20131226</pubdate>
+                <title>Street Segments</title>
+                <geoform>vector digital data</geoform>
+                <pubinfo>
+                    <pubplace/>
+                    <publish>DC GIS</publish>
+                </pubinfo>
+            </citeinfo>
+        </citation>
+        <descript>
+            <abstract>Street Segments. A single line representing each street in the District, segmented at major blocks to preserve geocoding integrity. They follow the general trend of the street and do not deviate due to parking lanes, turning lanes, etc. and contain address ranges for geocoding. The street GIS database includes only the major road types: street centerline. This layer contains complete theoretical address ranges.</abstract>
+            <purpose>This data set was created to act as a basis for public and private institutions to improve their policy and decision making; promote economic development; and enhance the quality of life for residents and businesses.</purpose>
+        </descript>
+        <timeperd>
+            <timeinfo>
+                <sngdate>
+                    <caldate>20131226</caldate>
+                </sngdate>
+            </timeinfo>
+            <current>publication date</current>
+        </timeperd>
+        <status>
+            <progress>Complete</progress>
+            <update>As needed</update>
+        </status>
+        <spdom>
+            <bounding>
+                <westbc>-77.116734</westbc>
+                <eastbc>-76.909401</eastbc>
+                <northbc>38.995255</northbc>
+                <southbc>38.793168</southbc>
+            </bounding>
+        </spdom>
+        <keywords>
+            <theme>
+                <themekt>None</themekt>
+                <themekey>transportation</themekey>
+                <themekey>road</themekey>
+                <themekey>Street Centerline</themekey>
+                <themekey>Street</themekey>
+                <themekey>Interstate</themekey>
+                <themekey>location</themekey>
+                <themekey>Planimetrics</themekey>
+            </theme>
+            <theme>
+                <themekt>ISO 19115 Topic Categories</themekt>
+                <themekey>transportation</themekey>
+            </theme>
+            <place>
+                <placekt>None</placekt>
+                <placekey>Washington</placekey>
+                <placekey>DC</placekey>
+                <placekey>District of Columbia</placekey>
+            </place>
+        </keywords>
+        <accconst>None</accconst>
+        <useconst>This work is licensed under a Creative Commons Attribution 4.0 International License.</useconst>
+        <ptcontac>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>D.C. Office of the Chief Technology Officer</cntorg>
+                    <cntper>GIS Data Coordinator</cntper>
+                </cntorgp>
+                <cntaddr>
+                    <addrtype>mailing and physical</addrtype>
+                    <address>200 I Street SE, 5th Floor</address>
+                    <city>Washington</city>
+                    <state>DC</state>
+                    <postal>20003</postal>
+                    <country>US</country>
+                </cntaddr>
+                <cntfax>(202) 727-5660</cntfax>
+                <cntemail>dcgis@dc.gov</cntemail>
+                <hours>8:30 am - 5 pm</hours>
+            </cntinfo>
+        </ptcontac>
+        <datacred>DC District Department of Transportation</datacred>
+    </idinfo>
+    <dataqual>
+        <attracc>
+            <attraccr>Validated by source and/or responsible agency. The original centerline attribute accuracy was tested by manual comparison of the digital orthos/aerial photography with the hard copy plots. In addition, several computer quality control programs were run on the accompanying digital data.</attraccr>
+        </attracc>
+        <logic>Validated by source and/or responsible agency.</logic>
+        <complete>Validated by source and/or responsible agency.</complete>
+        <posacc>
+            <horizpa>
+                <horizpar>Validated by source and/or responsible agency. The original centerlines, as part of the photogrammetric mapping effort, are captured to a planimetric base that meets National Map Accuracy standards for digital mapping at a 1 inch equals 83.33'.</horizpar>
+            </horizpa>
+            <vertacc>
+                <vertaccr>N/A</vertaccr>
+            </vertacc>
+        </posacc>
+        <lineage>
+            <srcinfo>
+                <srccite>
+                    <citeinfo>
+                        <origin/>
+                        <pubdate>20050101</pubdate>
+                        <title>Street Spatial Database</title>
+                        <geoform>vector digital data</geoform>
+                        <onlink>http://ddot.dc.gov</onlink>
+                    </citeinfo>
+                </srccite>
+                <typesrc>None</typesrc>
+                <srccitea>Street Spatial Database</srccitea>
+                <srccontr>location and attributes</srccontr>
+            </srcinfo>
+            <srcinfo>
+                <srccite>
+                    <citeinfo>
+                        <origin/>
+                        <pubdate>unknown</pubdate>
+                        <title>Washington DC GIS project</title>
+                        <geoform>map</geoform>
+                    </citeinfo>
+                </srccite>
+                <typesrc>CD-ROM</typesrc>
+                <srccitea>DD1</srccitea>
+                <srccontr>SIS data</srccontr>
+            </srcinfo>
+            <procstep>
+                <procdesc>District Department of Transportation (DDOT) Spatial Database System Division street database system moved into an enterprise environment, namely the Transportation Enterprise Asset Management System (TEAMS), in which GIS is a key component. The street spatial database is designed based on an enterprise database management system (Oracle and ArcSDE), using ESRI's geodatabase technology. The new street spatial data model adopts object-oriented data modeling methodology, and follows guidelines of ESRI's UNETRANS data model (ArcGIS Transportation Data Model). The new data model integrates GIS with transportation asset management and business processes within DDOT by making asset data spatial enabled using linear referencing system (LRS) and implements the new topology technology in ArcGIS 8.3 for maintaining the spatial database with shared geometries. DDOT constructed a public, readable version of the full Street Spatial Database containing various views for the centerlines and related data. OCTO staff related the centerline view feature class (RoadwaySegView) with the following tables (keys): streetcode_view (stcode), streetnamelist_view (streetid), streettype_view (sttypeid), and quadrant_view (quadcode). This pulled over the street names, types, and quadrants. Staff then related the roadway segments to the streetsegment_view feature class, on sourceid, to pull over the ownership, functional class, and national highway system (nhs) attributes. Then, staff created the ST_NAME attribute which combines street name with type into one field for labelling. Various visual checks were done on functional class, street name, quadrant, and other items to ensure the relates worked using the key fields.</procdesc>
+                <srcused>C:\OCTOGIS\MetadataData\SDE.SISSCLN.xml</srcused>
+                <proccont>
+                    <cntinfo>
+                        <cntorgp>
+                            <cntorg>Office of the Chief Technology Officer</cntorg>
+                            <cntper>GIS Data Coordinator</cntper>
+                        </cntorgp>
+                        <cntaddr>
+                            <addrtype>mailing and physical</addrtype>
+                            <address>441 4th St NW, Suite 930S</address>
+                            <city>Washington</city>
+                            <state>DC</state>
+                            <postal>20001</postal>
+                            <country>US</country>
+                        </cntaddr>
+                        <cntfax>202-727-5660</cntfax>
+                        <cntemail>dcgis@dc.gov</cntemail>
+                        <hours>8:30am - 5pm</hours>
+                    </cntinfo>
+                </proccont>
+            </procstep>
+            <procstep>
+                <procdesc>SIS Automation This methodology describes the original centerline capture as part of the 1999 planimetrics: Step 1 EDMD, D&amp;D, NCPC and designated representatives of DC DPW will meet to accomplish the presentation of the listing of government furnished material that are needed by D&amp;D. Then, set up conventions for the creation of intersection nodes, for attribution, for reporting of omissions, errors, or other QC issues in the SIS data to DC DPW and NCPC. These conventions will be tested and validated during the pilot project. Step 2 For each contiguous block of centerlines, D&amp;D will extend curb lines through street intersections and generate intersection nodes consistent with DPW guidance established in step 1. Step 3 Where two or more nodes are present that comprise a single intersection (e.g., two multi-street centerlines that intersect with four nodes), D&amp;D will cluster those nodes and identify an intersection centroid for linking SIS files of street names, address ranges, etc. Step 4 D&amp;D will overlay the SIS files and conflate them to match the centerlines, nodes, and multi-node centroids. Because of anticipated SIS shortcomings, such as identified in D&amp;D's Washington GIS, Pilot Project Final Report, dated June 30, 1997, this conflation will normally be performed manually. Step 5 D&amp;D will overlay the georeferenced SIS files over 1995 digital orthophotos and copies of the 1999 planimetric mapping provided by EDI to ensure that the new SIS files satisfy positional accuracy requirements. Step 6 D&amp;D will deliver one set of ARC/INFO export files (.e00) on CD-ROM to NCPC and will conduct a demonstration, on DPW equipment (PC ArcView), that the current INFO attributes work with the revised streetcenterline file coverage. Step 7 D&amp;D will conduct on-site field verification surveys (1) direction (2) street name, (3) address ranges for each street segment between cross-streets, (4) number of lanes, (5) directionality of lane, and (6) lane usage. Step 8 Addition of streets not digitized by EDMD. Step 9 Correction of address ranges where streets are bisected by added streets. Step 10 Correction of other SIS data errors observable from "windshield surveys." Step 11 Provision of discrepancy lists, to NCPC, where SIS street names differ from those posted on street signs. D&amp;D will not change the SIS files to match street signs that are verified in the field.</procdesc>
+                <procdate>19990101</procdate>
+                <proccont>
+                    <cntinfo>
+                        <cntorgp>
+                            <cntorg>Dewberry Davis, LLC</cntorg>
+                        </cntorgp>
+                        <cntaddr>
+                            <addrtype>mailing and physical</addrtype>
+                            <address>8401 Arlington Blvd.</address>
+                            <city>Fairfax</city>
+                            <state>VA</state>
+                            <postal>22031</postal>
+                            <country>US</country>
+                        </cntaddr>
+                        <hours>Regular office hours</hours>
+                    </cntinfo>
+                </proccont>
+            </procstep>
+        </lineage>
+    </dataqual>
+    <spdoinfo>
+        <direct>Vector</direct>
+        <ptvctinf>
+            <sdtsterm>
+                <sdtstype>String</sdtstype>
+                <ptvctcnt>13651</ptvctcnt>
+            </sdtsterm>
+        </ptvctinf>
+    </spdoinfo>
+    <eainfo>
+        <detailed>
+            <enttyp>
+                <enttypl>DCGIS.StreetSegmentLn</enttypl>
+            </enttyp>
+            <attr>
+                <attrlabl>Created</attrlabl>
+                <attrdef>Internal feature number.</attrdef>
+                <attrdefs>Esri</attrdefs>
+                <attrdomv>
+                              
+                    <udom>Sequential unique whole numbers that are automatically generated.</udom>
+                            
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>Editor</attrlabl>
+                <attrdef>Internal feature number.</attrdef>
+                <attrdefs>Esri</attrdefs>
+                <attrdomv>
+                              
+                    <udom>Sequential unique whole numbers that are automatically generated.</udom>
+                            
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>Edited</attrlabl>
+                <attrdef>Internal feature number.</attrdef>
+                <attrdefs>Esri</attrdefs>
+                <attrdomv>
+                              
+                    <udom>Sequential unique whole numbers that are automatically generated.</udom>
+                            
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>BEGINMEASURE</attrlabl>
+                <attrdef>being measure</attrdef>
+                <attrdefs>Esri</attrdefs>
+                <attrdomv>
+                              
+                    <udom>Sequential unique whole numbers that are automatically generated.</udom>
+                            
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>SHAPE.LEN</attrlabl>
+                <attrdef>Internal feature number.</attrdef>
+                <attrdefs>Esri</attrdefs>
+                <attrdomv>
+                              
+                    <udom>Sequential unique whole numbers that are automatically generated.</udom>
+                            
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>FROMADDRESSRIGHTTHEO</attrlabl>
+                <attrdef>From address low right theoretical range</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>FACILITYID</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>TOADDRESSRIGHTTHEO</attrlabl>
+                <attrdef>To address high theoretical range</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>ENDMEASURE</attrlabl>
+                <attrdef>end measure</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>SHAPE</attrlabl>
+                <attrdef>Feature geometry.</attrdef>
+                <attrdefs>ESRI</attrdefs>
+                <attrdomv>
+                              
+                    <udom>Coordinates defining the features.</udom>
+                            
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>SEGMENTTYPE</attrlabl>
+                <attrdef>street centerline type</attrdef>
+                <attrdomv>
+                              
+                    <udom>Positive real numbers that are automatically generated.</udom>
+                            
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>REGISTEREDNAME</attrlabl>
+                <attrdef>Registered Name of the centerline</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>STREETTYPE</attrlabl>
+                <attrdef>Street Type</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>SOURCEID</attrlabl>
+                <attrdef>Source Identifier</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>QUADRANT</attrlabl>
+                <attrdef>Quandrant Name</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>STREETSEGID</attrlabl>
+                <attrdef>Street Segment unique identifier</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>TOADDRESSLEFTTHEO</attrlabl>
+                <attrdef>to address high left theoretical range</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>UPDATETIMESTAMP</attrlabl>
+                <attrdef>update time stamp for the feature</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>DIRECTIONALITY</attrlabl>
+                <attrdef>directionality of street centerline</attrdef>
+                <attrdefs>ESRI</attrdefs>
+                <attrdomv>
+                              
+                    <udom>Coordinates defining the features.</udom>
+                            
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>Shape</attrlabl>
+                <attrdef>Feature geometry.</attrdef>
+                <attrdefs>ESRI</attrdefs>
+                <attrdomv>
+                              
+                    <udom>Coordinates defining the features.</udom>
+                            
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>FROMADDRESSLEFTTHEO</attrlabl>
+                <attrdef>from address low left theoretical range</attrdef>
+                <attrdefs>ESRI</attrdefs>
+                <attrdomv>
+                              
+                    <udom>Sequential unique whole numbers that are automatically generated.</udom>
+                            
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>OBJECTID</attrlabl>
+                <attrdef>Internal feature number.</attrdef>
+                <attrdefs>ESRI</attrdefs>
+                <attrdomv>
+                              
+                    <udom>Sequential unique whole numbers that are automatically generated.</udom>
+                            
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>FROMNODEID</attrlabl>
+                <attrdef>from node id</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>TONODEID</attrlabl>
+                <attrdef>to node id</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>STREETID</attrlabl>
+                <attrdef>Street identifier for street name</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>SE_ANNO_CAD_DATA</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>GIS_ID</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>GlobalID</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>Creator</attrlabl>
+            </attr>
+        </detailed>
+    </eainfo>
+    <distinfo>
+        <distrib>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>D.C. Office of the Chief Technology Officer</cntorg>
+                    <cntper>GIS Data Coordinator</cntper>
+                </cntorgp>
+                <cntaddr>
+                    <addrtype>mailing and physical</addrtype>
+                    <address>200 I Street SE, 5th Floor</address>
+                    <city>Washington</city>
+                    <state>DC</state>
+                    <postal>20003</postal>
+                    <country>US</country>
+                </cntaddr>
+                <cntfax>(202) 727-5660</cntfax>
+                <cntemail>dcgis@dc.gov</cntemail>
+                <hours>8:30 am - 5 pm</hours>
+            </cntinfo>
+        </distrib>
+        <distliab>See access and use constraints information.</distliab>
+        <custom>DC datasets can be downloaded from "http://opendata.dc.gov".</custom>
+    </distinfo>
+    <metainfo>
+        <metd>20171102</metd>
+        <metrd>05/09/05</metrd>
+        <metc>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>D.C. Office of the Chief Technology Officer</cntorg>
+                    <cntper>GIS Data Coordinator</cntper>
+                </cntorgp>
+                <cntaddr>
+                    <addrtype>mailing and physical</addrtype>
+                    <address>200 I Street SE, 5th Floor</address>
+                    <city>Washington</city>
+                    <state>DC</state>
+                    <postal>20003</postal>
+                    <country>US</country>
+                </cntaddr>
+                <cntfax>(202) 727-5660</cntfax>
+                <cntemail>dcgis@dc.gov</cntemail>
+                <hours>8:30 am - 5 pm</hours>
+            </cntinfo>
+        </metc>
+        <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+        <metstdv>FGDC-STD-001-1998</metstdv>
+        <mettc>local time</mettc>
+    </metainfo>
+</metadata>
