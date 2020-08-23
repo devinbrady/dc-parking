@@ -23,6 +23,7 @@ output_crs = ('epsg', '4326')
 one_foot_in_meters = 0.3048
 
 
+
 def point_along_line(start_point, end_point, meters_from_start):
     """
     Return a point that is one the line between start_point and end_point, 
@@ -41,6 +42,7 @@ def point_along_line(start_point, end_point, meters_from_start):
     )
     
     return destination_point
+
 
 
 def cut_street_into_points(street):
@@ -78,7 +80,9 @@ def cut_street_into_points(street):
 
         geom_idx += 1
 
+
     return [Point(p) for p in parking_spots]
+
 
 
 def street_blocks_to_parking_spots():
@@ -87,7 +91,7 @@ def street_blocks_to_parking_spots():
     containing one point for every possible parking space on each block. 
     """
     
-    rpp = gpd.read_file('Residential_Parking_Permit_Blocks-shp/Residential_Parking_Permit_Blocks.shp')
+    rpp = gpd.read_file('input/Residential_Parking_Permit_Blocks-shp/Residential_Parking_Permit_Blocks.shp')
     rpp = rpp.to_crs(maryland_crs)
     
     # Rename block sides
@@ -107,6 +111,8 @@ def street_blocks_to_parking_spots():
     for idx, street in tqdm(rpp.iterrows(), total=len(rpp)):
 
         if street['OBJECTID'] == 1973107:
+            # Multiple line segments on this street
+            # rpp[rpp['OBJECTID'] == 1973107]
             continue
 
         # if idx > 10:
@@ -173,6 +179,7 @@ def street_blocks_to_parking_spots():
         parking_dict[street['OBJECTID']] = temp_df
 
 
+
     df_dict = {}
     for d in parking_dict:
         df_dict[d] = pd.DataFrame(parking_dict[d], columns=['geometry'])
@@ -187,12 +194,10 @@ def street_blocks_to_parking_spots():
     parking_gdf = gpd.GeoDataFrame(parking_df)
 
     parking_gdf_output.to_crs(output_crs)
-    parking_gdf_output.to_file('parking_spots.geojson', driver='GeoJSON')
+    parking_gdf_output.to_file('output/parking_spots.geojson', driver='GeoJSON')
 
     print('Number of parking spots: {:,}'.format(len(parking_gdf)))
-    
-    # Multiple line segments on this street
-    # rpp[rpp['OBJECTID'] == 1973107]
+
 
 
 def drop_duplicate_geometries(gdf, print_counts=False):
@@ -263,15 +268,15 @@ def exclude_parking_spots_from_point_buffers(
 
 if __name__ == '__main__':
 
-    # street_blocks_to_parking_spots()
+    street_blocks_to_parking_spots()
 
-    exclude_parking_spots_from_point_buffers(
-        input_parking_spots = 'parking_spots.geojson'
-        , exclusion_points = {
-            'street_intersections.geojson': 50 * one_foot_in_meters
-            , 'fire_hydrants.geojson': 20 * one_foot_in_meters
-            , 'parking_meters_dc.geojson': 50 * one_foot_in_meters
-        }
-        , output_file = 'parking_spots_narrowed.geojson'
-        , sample = False
-    )
+    # exclude_parking_spots_from_point_buffers(
+    #     input_parking_spots = 'parking_spots.geojson'
+    #     , exclusion_points = {
+    #         'street_intersections.geojson': 50 * one_foot_in_meters
+    #         , 'fire_hydrants.geojson': 20 * one_foot_in_meters
+    #         , 'parking_meters_dc.geojson': 50 * one_foot_in_meters
+    #     }
+    #     , output_file = 'parking_spots_narrowed.geojson'
+    #     , sample = False
+    # )
