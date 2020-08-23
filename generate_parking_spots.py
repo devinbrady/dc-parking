@@ -92,7 +92,7 @@ def street_blocks_to_parking_spots():
     """
     
     rpp = gpd.read_file('input/Residential_Parking_Permit_Blocks-shp/Residential_Parking_Permit_Blocks.shp')
-    rpp = rpp.to_crs(maryland_crs)
+    # rpp = rpp.to_crs(maryland_crs)
     
     # Rename block sides
     rpp['block_side'] = rpp['BLK_SIDE'].map({
@@ -193,10 +193,26 @@ def street_blocks_to_parking_spots():
 
     parking_gdf = gpd.GeoDataFrame(parking_df)
 
-    parking_gdf_output.to_crs(output_crs)
+    parking_gdf_output = parking_gdf #.to_crs(output_crs)
     parking_gdf_output.to_file('output/parking_spots.geojson', driver='GeoJSON')
 
     print('Number of parking spots: {:,}'.format(len(parking_gdf)))
+
+
+
+def street_segments_to_intersections(input_file):
+    """
+    Return intersection for every road segment in input_file
+    """
+
+    streets = gpd.read_file(input_file)
+    streets_uu = streets.unary_union
+
+    intersections = streets_uu.intersection(streets_uu)
+
+    intersections_gdf = gpd.GeoDataFrame(intersections, columns=['geometry'])
+    intersections_gdf = drop_duplicate_geometries(intersections_gdf, print_counts=True)
+    intersections_gdf.to_file('output/street_intersections.geojson', driver='GeoJSON')
 
 
 
@@ -217,7 +233,7 @@ def drop_duplicate_geometries(gdf, print_counts=False):
 
 
 def exclude_parking_spots_from_point_buffers(
-    input_parking_spots, exclusion_points, output_file, sample=False):
+    exclusion_points, output_file, sample=False):
     """
     Given an input GeoJSON of parking spaces, save out a GeoJSON of parking spaces
     that do not fall within the buffer of any of the input_points
@@ -225,7 +241,7 @@ def exclude_parking_spots_from_point_buffers(
     Takes 11 minutes to run all three exclusions
     """
     
-    parking_gdf = gpd.read_file(input_parking_spots)
+    parking_gdf = gpd.read_file('output/parking_spots.geojson')
     parking_gdf = drop_duplicate_geometries(parking_gdf)
     parking_gdf = parking_gdf.to_crs(maryland_crs)
     
@@ -234,7 +250,7 @@ def exclude_parking_spots_from_point_buffers(
 
     exclusion_dict = {}
     for ep in exclusion_points:
-        temp = gpd.read_file(ep)
+        temp = gpd.read_file(ep) 
         temp = drop_duplicate_geometries(temp)
         temp = temp.to_crs(maryland_crs)
 
@@ -244,7 +260,7 @@ def exclude_parking_spots_from_point_buffers(
         bdf = gpd.GeoDataFrame(buff, columns=['geometry'])
         exclusion_dict[ep] = bdf.to_crs(output_crs)
         
-        buffer_output_file = Path(ep).stem + '_buffer.geojson'
+        buffer_output_file = 'output/' + Path(ep).stem + '_buffer.geojson'
         exclusion_dict[ep].to_file(buffer_output_file, driver='GeoJSON')
         print('Buffer saved to: ' + buffer_output_file)
 
@@ -266,17 +282,23 @@ def exclude_parking_spots_from_point_buffers(
     print('GeoJSON saved to: ' + output_file)
 
 
+
+
 if __name__ == '__main__':
 
-    street_blocks_to_parking_spots()
+    # street_blocks_to_parking_spots()
 
-    # exclude_parking_spots_from_point_buffers(
-    #     input_parking_spots = 'parking_spots.geojson'
-    #     , exclusion_points = {
-    #         'street_intersections.geojson': 50 * one_foot_in_meters
-    #         , 'fire_hydrants.geojson': 20 * one_foot_in_meters
-    #         , 'parking_meters_dc.geojson': 50 * one_foot_in_meters
-    #     }
-    #     , output_file = 'parking_spots_narrowed.geojson'
-    #     , sample = False
-    # )
+    # street_segments_to_intersections('input/Street_Segments-shp/Street_Segments.shp')
+
+    exclude_parking_spots_from_point_buffers(
+        exclusion_points = {
+            'input/street_intersections.geojson': 50 * one_foot_in_meters
+            , 'input/Fire_Hydrants-shp/Fire_Hydrants.shp': 20 * one_foot_in_meters
+            , 'input/Parking_Meters-shp/Parking_Meters.shp': 50 * one_foot_in_meters
+        }
+        , output_file = 'output/parking_spots_narrowed.geojson'
+        , sample = True
+    )
+
+
+
