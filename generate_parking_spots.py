@@ -49,7 +49,7 @@ def cut_street_into_points(street):
     """
     """
 
-    meters_per_car = 7
+    meters_per_car = 21 * one_foot_in_meters
 
     geom = [Point(xy) for xy in street['geometry'].coords]
     geom_idx = 0
@@ -239,6 +239,8 @@ def exclude_parking_spots_from_point_buffers(
     that do not fall within the buffer of any of the input_points
     
     Takes 11 minutes to run all three exclusions
+
+    todo: multithread this
     """
     
     parking_gdf = gpd.read_file('output/parking_spots.geojson')
@@ -286,7 +288,7 @@ def exclude_parking_spots_from_point_buffers(
 
 if __name__ == '__main__':
 
-    # street_blocks_to_parking_spots()
+    street_blocks_to_parking_spots()
 
     # street_segments_to_intersections('input/Street_Segments-shp/Street_Segments.shp')
 
@@ -300,5 +302,7 @@ if __name__ == '__main__':
         , sample = False
     )
 
+    # todo: parking stats, total area
+    # compare to bike share and scooters and bike parking
 
 
