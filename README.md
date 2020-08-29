@@ -8,6 +8,6 @@ This data is an estimate based off of street segments that are identified as bei
 
 Parking spots that are near other points, defined by Open Data DC shapefiles, are excluded. 
 
-* Street intersections: 50 feet radius
-* Fire hydrants: 20 feet radius
-* Parking meters: 50 feet radius
+* Street intersections: 50 foot radius
+* Fire hydrants: 20 foot radius
+* Parking meters: 50 foot radius
