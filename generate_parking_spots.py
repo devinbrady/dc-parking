@@ -274,6 +274,9 @@ def exclude_parking_spots_from_point_buffers(
 
     parking_spots_no_exclusions = gpd.GeoDataFrame(pbud, columns=['geometry'])
     parking_spots_no_exclusions.crs = maryland_crs
+    # todo: join this with the original geodataframe to get street name, parking spot id
+
+    parking_spots_no_exclusions = drop_duplicate_geometries(parking_spots_no_exclusions, print_counts=True)
 
     parking_spots_no_exclusions_wgs84 = parking_spots_no_exclusions.to_crs(output_crs)
     parking_spots_no_exclusions_wgs84.to_file(output_file, driver='GeoJSON')
@@ -290,15 +293,15 @@ if __name__ == '__main__':
 
     # street_segments_to_intersections('input/Street_Segments-shp/Street_Segments.shp')
 
-    # exclude_parking_spots_from_point_buffers(
-    #     exclusion_points = {
-    #         'input/street_intersections.geojson': 50 * one_foot_in_meters
-    #         , 'input/Fire_Hydrants-shp/Fire_Hydrants.shp': 20 * one_foot_in_meters
-    #         , 'input/Parking_Meters-shp/Parking_Meters.shp': 50 * one_foot_in_meters
-    #     }
-    #     , output_file = 'output/parking_spots_narrowed.geojson'
-    #     , sample = False
-    # )
+    exclude_parking_spots_from_point_buffers(
+        exclusion_points = {
+            'input/street_intersections.geojson': 50 * one_foot_in_meters
+            , 'input/Fire_Hydrants-shp/Fire_Hydrants.shp': 20 * one_foot_in_meters
+            , 'input/Parking_Meters-shp/Parking_Meters.shp': 50 * one_foot_in_meters
+        }
+        , output_file = 'output/parking_spots_narrowed.geojson'
+        , sample = True
+    )
 
     # todo: parking stats, total area
     # compare to bike share and scooters and bike parking
