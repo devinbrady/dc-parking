@@ -119,10 +119,11 @@ def street_blocks_to_parking_spots():
         #     break
             
         # if street['OBJECTID'] not in [
-        #         1971375 # california
+        #         1971375 # California
         #         , 1972138 # 19th
+        #         , 1969724 # Mintwood Place
         #     ]: 
-        #     continue
+            continue
 
         try:
             street_points = cut_street_into_points(street)
@@ -133,22 +134,19 @@ def street_blocks_to_parking_spots():
 
         start_coord = street['geometry'].coords[0]
         start_lon = start_coord[0]
-        start_lat = start_coord[1] 
+        start_lat = start_coord[1]
         end_coord = street['geometry'].coords[-1]
         end_lon = end_coord[0]
-        end_lat = end_coord[1] 
+        end_lat = end_coord[1]
 
         geodesic = pyproj.Geod(ellps='WGS84')
-        fwd_azimuth, back_azimuth, _ = geodesic.inv(start_lat, start_lon, end_lat, end_lon)
-        street_heading = fwd_azimuth
-        if street_heading < 0:
-            street_heading += 450
-
-        heading_right = (street_heading + 90) % 360
+        street_heading, _, _ = geodesic.inv(start_lon, start_lat, end_lon, end_lat)
+        
+        heading_right = (street_heading + 90)
         offset_right_x = math.sin(math.radians(heading_right)) * street_width_radians
         offset_right_y = math.cos(math.radians(heading_right)) * street_width_radians
 
-        heading_left = (street_heading - 90) % 360
+        heading_left = (street_heading - 90)
         offset_left_x = math.sin(math.radians(heading_left)) * street_width_radians
         offset_left_y = math.cos(math.radians(heading_left)) * street_width_radians
 
@@ -252,7 +250,7 @@ def exclude_parking_spots_from_point_buffers(
 
     exclusion_dict = {}
     for ep in exclusion_points:
-        temp = gpd.read_file(ep) 
+        temp = gpd.read_file(ep)
         temp = drop_duplicate_geometries(temp)
         temp = temp.to_crs(maryland_crs)
 
@@ -292,15 +290,15 @@ if __name__ == '__main__':
 
     # street_segments_to_intersections('input/Street_Segments-shp/Street_Segments.shp')
 
-    exclude_parking_spots_from_point_buffers(
-        exclusion_points = {
-            'input/street_intersections.geojson': 50 * one_foot_in_meters
-            , 'input/Fire_Hydrants-shp/Fire_Hydrants.shp': 20 * one_foot_in_meters
-            , 'input/Parking_Meters-shp/Parking_Meters.shp': 50 * one_foot_in_meters
-        }
-        , output_file = 'output/parking_spots_narrowed.geojson'
-        , sample = False
-    )
+    # exclude_parking_spots_from_point_buffers(
+    #     exclusion_points = {
+    #         'input/street_intersections.geojson': 50 * one_foot_in_meters
+    #         , 'input/Fire_Hydrants-shp/Fire_Hydrants.shp': 20 * one_foot_in_meters
+    #         , 'input/Parking_Meters-shp/Parking_Meters.shp': 50 * one_foot_in_meters
+    #     }
+    #     , output_file = 'output/parking_spots_narrowed.geojson'
+    #     , sample = False
+    # )
 
     # todo: parking stats, total area
     # compare to bike share and scooters and bike parking
