@@ -23,6 +23,20 @@ output_crs = ('epsg', '4326')
 one_foot_in_meters = 0.3048
 
 
+def map_block_side(blk_side_series):
+    """
+    Map the block side letters to their definition
+    """
+
+    return blk_side_series.map({
+        'AO': 'address only'
+        , 'B': 'both sides'
+        , 'V': 'even side'
+        , 'O': 'odd side'
+        , 'S': 'single building'
+    })
+
+
 
 def point_along_line(start_point, end_point, meters_from_start):
     """
@@ -286,12 +300,92 @@ def exclude_parking_spots_from_point_buffers(
 
 
 
+def add_fields_from_original_shapefile():
+    """
+    Join narrowed shapefile to original shapefile by geometry, 
+    and add fields like street name to the narrowed geodataframe
+    """
+
+    parking_spots = gpd.read_file('output/parking_spots.geojson')
+    parking_spots_narrowed = gpd.read_file('output/parking_spots_narrowed.geojson')
+
+    parking_spots['source_street_objectid'] = parking_spots['source_street_objectid'].round().astype(str)
+    parking_spots['parking_spot_id'] = parking_spots['parking_spot_id'].round().astype(str)
+
+
+    parking_spots['geo_str'] = (
+        parking_spots['geometry'].x.round(8).astype(str)
+        + ', '
+        + parking_spots['geometry'].y.round(8).astype(str)
+    )
+
+    parking_spots_narrowed['geo_str'] = (
+        parking_spots_narrowed['geometry'].x.round(8).astype(str)
+        + ', '
+        + parking_spots_narrowed['geometry'].y.round(8).astype(str)
+    )
+
+    ps_joined = pd.merge(
+        parking_spots_narrowed
+        , parking_spots[['geo_str', 'parking_spot_id', 'source_street_objectid']]
+        , how='inner', on='geo_str'
+    )
+
+    rpp = gpd.read_file('input/Residential_Parking_Permit_Blocks-shp/Residential_Parking_Permit_Blocks.shp')
+
+    rpp['block_side'] = map_block_side(rpp['BLK_SIDE'])
+    rpp['source_street_objectid'] = rpp['OBJECTID'].round().astype(str)
+
+    rpp_columns = [
+        'source_street_objectid'
+        , 'REGISTERED'
+        , 'STREETTYPE'
+        , 'QUADRANT'
+        , 'BLOCKNUMBE'
+        , 'WARD'
+        , 'BLKSTREET'
+        , 'block_side'
+    ]
+
+    parking_rpp = pd.merge(ps_joined, rpp[rpp_columns], how='inner', on='source_street_objectid')
+    parking_rpp = parking_rpp.drop('geo_str', axis=1)
+    parking_rpp = parking_rpp.rename(columns={
+        'REGISTERED': 'street_name'
+        , 'STREETTYPE': 'street_type'
+        , 'BLOCKNUMBE': 'block_number'
+        })
+    # parking_rpp['WARD'] = parking_rpp['WARD'].astype(int)
+    parking_rpp.columns = [c.lower() for c in parking_rpp.columns]
+
+
+    output_file = 'output/estimated_rpp_spots.geojson'
+    parking_rpp.to_file(output_file, driver='GeoJSON')
+    print(f'Output saved to: {output_file}')
+
+
+
+def geojson_to_csv(input_geojson):
+    """
+    Save a copy of a GeoJSON file as a CSV
+    """
+
+    gdf = gpd.read_file(input_geojson)
+    
+    gdf['longitude'] = gdf['geometry'].x
+    gdf['latitude'] = gdf['geometry'].y
+
+    columns_to_csv = [c for c in gdf if c != 'geometry']
+    output_filename = input_geojson.replace('.geojson', '.csv')
+    gdf.to_csv(output_filename, index=False)
+    print(f'CSV saved to: {output_filename}')
+
+
 
 if __name__ == '__main__':
 
     street_blocks_to_parking_spots()
 
-    # street_segments_to_intersections('input/Street_Segments-shp/Street_Segments.shp')
+    street_segments_to_intersections('input/Street_Segments-shp/Street_Segments.shp')
 
     exclude_parking_spots_from_point_buffers(
         exclusion_points = {
@@ -303,7 +397,8 @@ if __name__ == '__main__':
         , sample = True
     )
 
-    # todo: parking stats, total area
-    # compare to bike share and scooters and bike parking
+    add_fields_from_original_shapefile()
+
+    geojson_to_csv('output/estimated_rpp_spots.geojson')
 
 
