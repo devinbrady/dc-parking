@@ -106,6 +106,7 @@ def street_blocks_to_parking_spots():
     """
     
     rpp = gpd.read_file('input/Residential_Parking_Permit_Blocks-shp/Residential_Parking_Permit_Blocks.shp')
+    rpp = drop_duplicate_geometries(rpp, print_counts=True)
     # rpp = rpp.to_crs(maryland_crs)
     
     # Rename block sides
@@ -232,7 +233,7 @@ def drop_duplicate_geometries(gdf, print_counts=False):
     # Drop duplicates. From https://github.com/geopandas/geopandas/issues/521
     
     if print_counts:
-        print('Dropping duplicates... {:,} '.format(len(gdf)), end='> ')
+        print('Dropping duplicates... {:,} '.format(len(gdf)), end='--> ')
     
     G = gdf['geometry'].apply(lambda geom: geom.wkb)
     gdf = gdf.loc[G.drop_duplicates().index]
@@ -385,7 +386,7 @@ if __name__ == '__main__':
 
     street_blocks_to_parking_spots()
 
-    street_segments_to_intersections('input/Street_Segments-shp/Street_Segments.shp')
+    # street_segments_to_intersections('input/Street_Segments-shp/Street_Segments.shp')
 
     exclude_parking_spots_from_point_buffers(
         exclusion_points = {
@@ -394,7 +395,7 @@ if __name__ == '__main__':
             , 'input/Parking_Meters-shp/Parking_Meters.shp': 50 * one_foot_in_meters
         }
         , output_file = 'output/parking_spots_narrowed.geojson'
-        , sample = True
+        , sample = False
     )
 
     add_fields_from_original_shapefile()
