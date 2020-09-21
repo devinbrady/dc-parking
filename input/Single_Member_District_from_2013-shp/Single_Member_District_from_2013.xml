@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?><metadata>
+    <idinfo>
+        <citation>
+            <citeinfo>
+                <origin/>
+                <origin/>
+                <pubdate>20191120</pubdate>
+                <title>Single Member District from 2013</title>
+                <geoform>vector digital data</geoform>
+                <pubinfo>
+                    <publish>DC GIS</publish>
+                </pubinfo>
+                <lworkcit>
+                    <citeinfo>
+                        <title>DC Geographic Information System DC Atlas</title>
+                    </citeinfo>
+                </lworkcit>
+            </citeinfo>
+        </citation>
+        <descript>
+            <abstract>Single Member District or SMD's. Single Member Districts (SMDs) were created pursuant to legislation approving the District of Columbia's Home Rule charter in 1973. These neighborhood groups provide the District electorate with grass-roots experience in the electoral process. These SMDs boundaries, developed by the DC Council, are based on the 2010 Census of the District's population, with each SMD having approximately 2,000 residents. Representatives elected to each Single Member District sit as Advisory Neighborhood Commissioners. This data set reflects the boundaries approved by the DC Council in May, 2012, for official 2013 SMDs.</abstract>
+            <purpose>SMDs are used for the planning and management of Washington by local government agencies. </purpose>
+            <supplinf>The DC Board of Elections and Ethics (BOEE) is responsible for maintaining SMD boundaries. See the BOEE website @ http://www.dcboee.org for more SMD background. This data set was compiled by the DC Office of Planning.</supplinf>
+        </descript>
+        <timeperd>
+            <timeinfo>
+                <sngdate>
+                    <caldate>20140101</caldate>
+                </sngdate>
+            </timeinfo>
+            <current>ground condition</current>
+        </timeperd>
+        <status>
+            <progress>Complete</progress>
+            <update>As needed</update>
+        </status>
+        <spdom>
+            <bounding>
+                <westbc>-77.119896</westbc>
+                <eastbc>-76.909016</eastbc>
+                <northbc>38.995967</northbc>
+                <southbc>38.791582</southbc>
+            </bounding>
+        </spdom>
+        <keywords>
+            <theme>
+                <themekt>None</themekt>
+                <themekey>ANC</themekey>
+                <themekey>boundary</themekey>
+                <themekey>SMD</themekey>
+                <themekey>Single Member District</themekey>
+                <themekey>Ward</themekey>
+            </theme>
+            <theme>
+                <themekt>ISO 19115 Topic Categories</themekt>
+                <themekey>boundaries</themekey>
+            </theme>
+            <place>
+                <placekt>None</placekt>
+                <placekey>DC</placekey>
+                <placekey>DC GIS</placekey>
+                <placekey>District of Columbia</placekey>
+                <placekey>DCGIS</placekey>
+                <placekey>Washington DC</placekey>
+            </place>
+        </keywords>
+        <accconst>None</accconst>
+        <useconst>This work is licensed under a Creative Commons Attribution 4.0 International License.</useconst>
+        <ptcontac>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>D.C. Office of the Chief Technology Officer</cntorg>
+                    <cntper>GIS Data Coordinator</cntper>
+                </cntorgp>
+                <cntaddr>
+                    <addrtype>mailing and physical</addrtype>
+                    <address>200 I Street SE, 5th Floor</address>
+                    <city>Washington</city>
+                    <state>DC</state>
+                    <postal>20003</postal>
+                    <country>US</country>
+                </cntaddr>
+                <cntfax>(202) 727-5660</cntfax>
+                <cntemail>dcgis@dc.gov</cntemail>
+                <hours>8:30 am - 5 pm</hours>
+            </cntinfo>
+        </ptcontac>
+    </idinfo>
+    <dataqual>
+        <attracc>
+            <attraccr>Data believed to be complete and accurate, subject to change.</attraccr>
+        </attracc>
+        <complete>Data believed to be complete and accurate, subject to change.</complete>
+        <lineage>
+            <srcinfo>
+                <srccite>
+                    <citeinfo>
+                        <pubdate>20120101</pubdate>
+                        <title>Single Member District</title>
+                        <othercit>Act A19-0364, Advisory Neighborhood Commissions Boundaries Act of 2012 Also A19-0341, Advisory Neighborhood Commissions Boundaries Emergency Act of 2012 A19-0348, Advisory Neighborhood Commissions Boundaries Temporary Act of 2012 A19-0370, Advisory Neighborhood Commissions Boundaries Technical Correction Emergency Amendment Act of 2012</othercit>
+                    </citeinfo>
+                </srccite>
+                <srcscale>0</srcscale>
+                <typesrc>onLine</typesrc>
+                <srccitea>Single Member District</srccitea>
+            </srcinfo>
+            <procstep>
+                <procdesc>For SMDs, 2002 boundaries were used as a starting point. Changes to 2002 boundaries were made using the trace tool on the geographic features referenced in the legislation text (street centerlines, census blocks, lot boundaries, ward boundaries) and merged with/split from the 2002 boundaries. Where the legislation text described boundaries that didn't follow existing features, boundaries were digitized freehand. Once the smds were finalized, ANCs were constructed by dissolving the SMDs on their respective ANC values.</procdesc>
+                <procdate>20120608</procdate>
+                <proccont>
+                    <cntinfo>
+                        <cntorgp>
+                            <cntorg>Office of the Chief Technology Officer</cntorg>
+                        </cntorgp>
+                    </cntinfo>
+                </proccont>
+            </procstep>
+            <procstep>
+                <procdesc>Added smd representative contact information.</procdesc>
+                <procdate>20130201</procdate>
+                <proccont>
+                    <cntinfo>
+                        <cntorgp>
+                            <cntorg>OCTO</cntorg>
+                        </cntorgp>
+                    </cntinfo>
+                </proccont>
+            </procstep>
+            <procstep>
+                <procdesc>Updated smd representative information 1. ANC 2A Has a new address effective immediately. It is: Advisory Neighborhood Commission 2A Box #293 2020 Pennsylvania Ave NW Washington, DC 20006 2. The following Single Member Districts are now vacant. SMD "Old" Commissioner 2F08 Matthew Connolly 3F06 David Lowell 4A04 Marian Bennett 6D02 Ed Kaminski 3. The following SMDs have new Commissioners: SMD "Old" Commissioner "New" Commissioner 1A01 Lisa Kralovic Daniel Kornfield 1A04 Laina Aquiline Morgan P. Corr 2E07 Charles Eason Ellen Steury 4C02 Janet Myers Joseph Maloney 5B03 Tiffany Bridge Michael I. Morrison 5E03 Tim Clark Alex Underwood 6D01 Donna Hopkins Sam Marrero 6D03 Ron McBee Rachel Reilly Carroll 8E03 Vacant Anthony Dailey</procdesc>
+                <procdate>20140321</procdate>
+                <proccont>
+                    <cntinfo>
+                        <cntorgp>
+                            <cntorg>OCTO</cntorg>
+                        </cntorgp>
+                    </cntinfo>
+                </proccont>
+            </procstep>
+            <procstep>
+                <procdesc>Staff updated Rep information.</procdesc>
+                <procdate>20190215</procdate>
+                <proccont>
+                    <cntinfo>
+                        <cntorgp>
+                            <cntorg>D.C. Office of the Chief Technology Officer</cntorg>
+                            <cntper>GIS Data Coordinator</cntper>
+                        </cntorgp>
+                        <cntaddr>
+                            <addrtype>unknown</addrtype>
+                            <address>200 I Street SE, 5th Floor</address>
+                            <city>Washington</city>
+                            <state>DC</state>
+                            <postal>20003</postal>
+                            <country>US</country>
+                        </cntaddr>
+                        <cntfax>(202) 727-5660</cntfax>
+                        <cntemail>dcgis@dc.gov</cntemail>
+                        <hours>8:30 am - 5 pm</hours>
+                    </cntinfo>
+                </proccont>
+            </procstep>
+            <procstep>
+                <procdesc>Staff updated update representative names and contacts</procdesc>
+                <procdate>20191108</procdate>
+                <proccont>
+                    <cntinfo>
+                        <cntorgp>
+                            <cntorg>D.C. Office of the Chief Technology Officer</cntorg>
+                            <cntper>GIS Data Coordinator</cntper>
+                        </cntorgp>
+                        <cntaddr>
+                            <addrtype>unknown</addrtype>
+                            <address>200 I Street SE, 5th Floor</address>
+                            <city>Washington</city>
+                            <state>DC</state>
+                            <postal>20003</postal>
+                            <country>US</country>
+                        </cntaddr>
+                        <cntfax>(202) 727-5660</cntfax>
+                        <cntemail>dcgis@dc.gov</cntemail>
+                        <hours>8:30 am - 5 pm</hours>
+                    </cntinfo>
+                </proccont>
+            </procstep>
+        </lineage>
+    </dataqual>
+    <spdoinfo>
+        <direct>Vector</direct>
+        <ptvctinf>
+            <sdtsterm>
+                <sdtstype>GT-polygon composed of chains</sdtstype>
+                <ptvctcnt>0</ptvctcnt>
+            </sdtsterm>
+        </ptvctinf>
+    </spdoinfo>
+    <eainfo>
+        <detailed>
+            <enttyp>
+                <enttypl>SMDPly</enttypl>
+            </enttyp>
+            <attr>
+                <attrlabl>OBJECTID</attrlabl>
+                <attrdef>Internal feature number.</attrdef>
+                <attrdefs>Esri</attrdefs>
+                <attrdomv>
+                                                  
+                    
+                    <udom>Sequential unique whole numbers that are automatically generated.</udom>
+                                                
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>SMD_ID</attrlabl>
+                <attrdef>SMD identifier</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>ANC_ID</attrlabl>
+                <attrdef>ANC identifier</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>WEB_URL</attrlabl>
+                <attrdef>Web site url</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>NAME</attrlabl>
+                <attrdef>SMD Name</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>CHAIR</attrlabl>
+                <attrdef>Chair of ANC</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>REP_NAME</attrlabl>
+                <attrdef>Representative Name</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>LAST_NAME</attrlabl>
+                <attrdef>Representative LastName</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>FIRST_NAME</attrlabl>
+                <attrdef>Representative First Name</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>ADDRESS</attrlabl>
+                <attrdef>Representative Address</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>MIDDLE_NAME</attrlabl>
+                <attrdef>Representative Middle Name</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>SF</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>APT</attrlabl>
+                <attrdef>Representative Apt/Unit #</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>PHONE</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>EMAIL</attrlabl>
+                <attrdef>Representative Email</attrdef>
+            </attr>
+            <attr>
+                <attrlabl>ZIP</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>SHAPE</attrlabl>
+                <attrdef>Feature geometry.</attrdef>
+                <attrdefs>Esri</attrdefs>
+                <attrdomv>
+                                                  
+                    
+                    <udom>Coordinates defining the features.</udom>
+                                                
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>GIS_ID</attrlabl>
+                <attrdef>Sequential OCTO-GIS number</attrdef>
+                <attrdefs>OCTO</attrdefs>
+            </attr>
+            <attr>
+                <attrlabl>SHAPE.AREA</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>SHAPE.LEN</attrlabl>
+            </attr>
+        </detailed>
+    </eainfo>
+    <distinfo>
+        <distrib>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>D.C. Office of the Chief Technology Officer</cntorg>
+                    <cntper>GIS Data Coordinator</cntper>
+                </cntorgp>
+                <cntaddr>
+                    <addrtype>mailing and physical</addrtype>
+                    <address>200 I Street SE, 5th Floor</address>
+                    <city>Washington</city>
+                    <state>DC</state>
+                    <postal>20003</postal>
+                    <country>US</country>
+                </cntaddr>
+                <cntfax>(202) 727-5660</cntfax>
+                <cntemail>dcgis@dc.gov</cntemail>
+                <hours>8:30 am - 5 pm</hours>
+            </cntinfo>
+        </distrib>
+        <distliab>See access and use constraints information.</distliab>
+        <custom>DC datasets can be downloaded from "http://opendata.dc.gov".</custom>
+    </distinfo>
+    <metainfo>
+        <metd>20191108</metd>
+        <metrd>01/07/04</metrd>
+        <metc>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>D.C. Office of the Chief Technology Officer</cntorg>
+                    <cntper>GIS Data Coordinator</cntper>
+                </cntorgp>
+                <cntaddr>
+                    <addrtype>mailing and physical</addrtype>
+                    <address>200 I Street SE, 5th Floor</address>
+                    <city>Washington</city>
+                    <state>DC</state>
+                    <postal>20003</postal>
+                    <country>US</country>
+                </cntaddr>
+                <cntfax>(202) 727-5660</cntfax>
+                <cntemail>dcgis@dc.gov</cntemail>
+                <hours>8:30 am - 5 pm</hours>
+            </cntinfo>
+        </metc>
+        <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+        <metstdv>FGDC-STD-001-1998</metstdv>
+        <mettc>local time</mettc>
+    </metainfo>
+</metadata>

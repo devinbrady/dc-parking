@@ -31,7 +31,15 @@ Parking spots that are near other points, defined by Open Data DC shapefiles, ar
 
 ## Data Sources
 
+### Open Data DC
+
 * [Residential Parking Permit Blocks](https://opendata.dc.gov/datasets/residential-parking-permit-blocks)
 * [Fire Hydrants](https://opendata.dc.gov/datasets/fire-hydrants)
 * [Parking Meters](https://opendata.dc.gov/datasets/parking-meters)
 * [Street Segments](https://opendata.dc.gov/datasets/street-segments)
+* [Advisory Neighborhood Commission](https://opendata.dc.gov/datasets/advisory-neighborhood-commissions-from-2013)
+* [ANC Single Member District](https://opendata.dc.gov/datasets/single-member-district-from-2013)
+
+### TIGER/Line
+
+* [2019 Census Block](https://www.census.gov/cgi-bin/geo/shapefiles/index.php?year=2019&layergroup=Blocks+%282010%29)
