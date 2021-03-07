@@ -19,7 +19,7 @@ Next, I built buffers around each of the exclusion points and removed all of the
 
 ## Counts
 
-See the notebook [Counts](Counts.ipynb) for parking spots by ward and total area. 
+See the notebook [Counts](counts/Counts.ipynb) for parking spots by ward and total area. 
 
 ## Exclusions
 
